@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import "./App.css";
 
 function App() {
+  const imgRef = useRef();
+  const canvasRef = useRef();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img
+        ref={imgRef}
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvrtAJip6SgYDoTp1BlE172QMQj3S7orzK7g&sWZL2QhI3OO5+lM23g27KXGSNTTYAUlYdGnfcE9yT3GMetETfBVoi3BNxnPvzJKDlIeV+Gn/yjby+1EzskMoQUDA05x/2onPVIBQt3IEp3CCWn4824TfmFDKQ3pwnPp67Gol0kxYSOTFS2kKyDoGDmrXjGco8MOSkBPOjKQ5pB7pI1b+xNZfcuKovzjoQouIB1ICUkZ9QfKovJxSkk12el4mSMY+wNceMAX7mNhsKfaHgT1RjbJ9/7VN4I4TduM9p59wthkBaW1FIKjntvv2rzAdN+mvyXI6XNCS21k7pxuTiiCGShlCmVlKkkKSQdwcmpM2eWNKNDcWGGWblZsoKVxG3W1p5iE4BPtuDQ2pmQu4/MPvtxWBnUhAzzPLGen0oYa4qU1GUmUp9D6RjmtbhfuPP1oLnS71xTPVEtypKmQrDrurCc+RV29hWhL6ug3/F+wk484vhuPO29qQXHm04DSE6tR/pJHT1oPtvBlwufNkTiYqAUlAIHiKjsAO1HfC3DUK0Q/xGmnZTLTjjjoTnCh0HpRexHbdnlKtRZa0JAzkatPWmKXDSBnBTXKYCOcGufxFpmKvlR40UtsqxkqeGFKJ9PGkH39K9v8WXOyxTCuNsU6WvChWdaT/etXjw2JkJxCNltvEgkd8D/fpQzf7QtYCXW9Jzg6hkH60bk09oTBJqk6Zn6ptz4wX8qI/y8JBClOEDYeg86Y4MQzHcdh3KNvAmE89Q2bSTgK9s7Vo1l4cdKeWy3obP5lkYFXUuxQo0oILKTHea5Tqcfm67n7mijbvWjmVR1vZWouDsFtpK4635T5VyWkbJ056qV0A/fO1VXFTtzcguKnNMqjqTpLbGQoexJOfOrK2Wpdmflx331vIU6lTCnDkhvSAEjyG1TbgGX2QwVJSpfhB81Y6VO5tS0NxePFwtrsyLgW3qlzpUWMpl54L5kbnHwpzso4/q6D61qPC3DblskKXJe5rjiSFjt7eVZnAnp4c4zlqW2UN6wUnsnrn7/wBhRGLvN4hunyTanoSEOk/NBWkZGMDV0wQaZK2/waC4ql2Eq7bZ407lOtNPODJwk5KQPMUA/E/5d95MqMUkADAA8tulE104XioakTm5Mlcko3W2VBOQO5Pb2rPOKoC7ZCZaXIce569WFknTtvj0yRXFFJoZKT4NsblSY/8AEojTQACoqktqbUPzKCsAnzG2PrRTaZ81HDqIKX1ENDSUg7qT3A9f7ZoPtkFpy5piSUlSZEfKT/StODkevWrSTIm2GQnmtGRFWRlzoQPX1oskFJaFYsqUmpmgJu1wegNt2pmcWcaCVQyrB6Yz069qqb65Jj/LrTBltyXN+Y4pIWU9yR1796nW67yxD+Ys8hpTb2C6lwkEKHf3qFcZDzEOTOuLhkSFJwENjUo+g70ulRT7f4DPF8z/AJJxh1xS1LGVKzuB/wC9VXDLL8m9y1MtaWR0X0APb36GmxDmXJzVcPwGyrUUfzq9Paim3tKQyGozKtHfAoo+kaOQwvLPnIJraWWGUgErUrdR6lRq5jNpcQEFJSk/y5wT70MRZQjOhLiwVq6No3P18qvo/MfbPM1IQR+RB/c1xF7SrR4nN2eEFOfLc91G5QyMke/lXUzgpIUiUhKSMhJX0HlVi1yEtFshKTjGlIoYct8UuKImISMnCfL0pyZPSvYdomxYA5EVtDadWTo2yfXzNNLu4OnUodSrFBfzrvOWlxtxRb1ZwcaiOuDTUjiS32UKdnIQt9P5Q85gDfoANz0q6kj5vk30Fl0ujmG2m9XPd3Sk9k9j+/2qsvN+diR7g7JksMpZDbSEqGVDKclXmfIAd6ya68a3i7XB1UGU6ypeyloGg46BI7gfXNWQZYhcOybpdZb78+Y4hlDjmVrABJOCemyT9DS55lFeoyMeT2QrjxHfrozMZaL4guk9WsKKOwJ7D9aizEu3KHbZbRbS4kKZWlW2+AR9+tWbd7gR2kIbMltSyE804O3fbp+lQpUvTa5brXLeQ1NQoHqCSkjbNck5xadbs6lBpq9HeHrjHs8l6NcWlh0LDqdCSoEEb/pVnaZAchF3SpKcnSFdQMqx+lRuF5ES5XyAzIYbTkaShfQ+HGQe3SkxFkWu+yYDhCopOpGo7pBzp9xg1B5keTaffZd4s+NV10e/l5F2ucW3RgQZC8FZH5E9VK+gH7edbDbLHFhQG47DaUtt7BOPLY/ehD4exkyLnLmHGltPJbHme+P3rQRhtakpGcHO5ocMeMEHllc2RZcESG3UBxaRoI8O2quWwA2ptaBsQFYOd9z3p4SAhZz/ACqNemXUxLagP6W20jqtQAIJpoDkywswCTJ0qz+Lkj0I2q0KUqG6QaBG+M7TEu0OMHVlclfJWpCfw89U+Lp2P3NHDDgcGxzj1qiLtE0luz3pA6Ch7isOqiuFh1xtSEeFTf5gT5URnoagOx0yGjkZ1nODRfAKdOzNrYyi0QZTcuU446p5KkF95S1k58yc1bySnQpQ3LctASe+k6c/vXeIbTDkOuIWFFIPVJIOpPcfUY+lBsR25OXB+Bl91tma2pRTkjQQDv8AaopR+T0cU1STKjjWLq4kmONgqZWBoGf986Z4J4mTb31Wy6rLLectPA7tq7DPlRXdLeuRdZC20PaQRpb0d8YrP+K4iWuImoyYxPMSAptAyVHfamx3GmIm+M+SD+XxHEbnrcnXJUuNoyhBwAD5470BzJrnFN/LoGIbKvAO30qPIsDMFthc51YLisKTr8IOdhmiWzwokVCeQlCEpH8veglUFa7ChKWWk+iZboCBe7arSM4c+xTj+9X13s7amUOOJCw2pGM75JUE/wDqqBYXkyb3IS3hTkaEpQHZJURjPrsavrmtxVj0lKitXJyfXWk0MbQnyGnN0D03h8tIc+RB14ypvoM+nlVay6HH0tiOtR05UCSSD696Ib3cHmGhGaSoPPYRkDBGc7j12oIhJfUy5KW46FNuLGoHChvWdFfi5ZRj7dF0ESNemPbkpV0ypNSG7XPfGZMpSG/6Ghp/XrUVF/mwH1NSUCRHABQ9tqKcdTjY9+lWcW/xpSeY0tKgf0rUz0I5YT/Y9AiNRgUNIwT1z3q2acLYwCdQH8vRNU6pyEkKChvtvTnNQ+nBdCUDc6TuTXBjpFmJyEPJS0CcH8/nXhyBCdcU4tCtSyVHxHqaiR3W1p5DY2H5fSncPf1n7CmoRPsya7cYXmY+80H0xm21lCUx06dt++5ocWpbrii44taj1Uo5JpUqtbPnYomWt1bRfUg4UEjB7jrRxxihLNisTKB4SSTnqSEp/wA0qVHS5wBb9Zg3dDlDYwMAE145aWuEXyjP4j7ZV+tdpU3zdSj+xXidP9DtiGbvb/Un9qsr5NdjX1htAQpKoqB4hkjxGlSqTykvrf4U+M/4/wDTQfh5vwtKc6OIkqWlQ6ggii5pxSpSzsNSEqwPOlSqRdFj7GST8w/7k1S3i2RnWbqp0KXhrUApWQDppUqy7MR7RBiv29lt5hCxygrxDoQNjR7wySYTeST+GnqaVKnY/kTk6Ld/ZpZHlXjOlkkfypJFKlTPgV8gxOOLU+sAamR4D7jf96HuDkBcSdJJIdVM0FQ8kgAUqVT/AHKIljMSENyXR+ZCSoe9ZrbwJvETLsjxOPx3ipXQjxJ6eVKlWicydFdx0rm2tTpASeclISkYAA8qFGeIblFYLLTwwnCQopyQKVKiilxJ4No0T4TkuWS9S1kqfW6Qpw9ThAx+5o3uZ5dnbCf6mB//AGilSpc/7GZScRLUkR1JJChqOf8A9dxTcW3x33Zi1pI3CsA7Zxv+1KlSpHp+P/RA0+Cw++yFFSIzoS3qxsk9vahe4SHYM5D8VXLLilJUgflOPSlSpuLoVk1lVFjfrlKZtjS23MFRA6VJtZU00laFqyoZOVHelSo2imMm5bCK1SXS+gE7CjVDLakJJTuRmlSoR5//2Q=="
+        alt=""
+        height={"400px"}
+        width={"500px"}
+      />
+
+      <canvas ref={canvasRef} width="500px" height="400px" />
     </div>
   );
 }
